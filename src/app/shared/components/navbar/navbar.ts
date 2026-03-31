@@ -1,29 +1,14 @@
-import { Component, input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatToolbarModule, MatIconModule],
+  imports: [MatToolbarModule, MatIconModule, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar implements OnInit, OnChanges, OnDestroy {
-  title = input<string>();
-
-  constructor() {
-    console.log('Navbar constructor');
-  }
-
-  ngOnChanges(): void {
-    console.log('Navbar changed');
-  }
-
-  ngOnInit(): void {
-    console.log('Navbar initialized');
-  }
-
-  ngOnDestroy(): void {
-    console.log('Navbar destroyed');
-  }
+export class Navbar {
+  title = signal<string>('MUSICAL EVENTS');
 }

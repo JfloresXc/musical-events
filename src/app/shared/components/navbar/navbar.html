@@ -1,6 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="header">
   <a routerLink="/" class="logo">
-    <mat-icon>event</mat-icon>
+    <mat-icon>music_note</mat-icon>
     <span>{{ title() }}</span>
   </a>
+
+  <span class="spacer"></span>
+
+  <a mat-stroked-button routerLink="/login">Ingresar</a>
+  <a mat-flat-button routerLink="/register">Registrarse</a>
 </mat-toolbar>
