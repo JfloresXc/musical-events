@@ -1,0 +1,22 @@
+.global-loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+app-header {
+  display: block;
+}
+
+.main-content {
+  min-height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+}
+
+app-footer {
+  display: block;
+  margin-top: auto;
+}

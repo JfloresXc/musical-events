@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListOfEvents } from './features/events/components/list-of-events/list-of-events';
 import { Navbar } from './shared/components/navbar/navbar';
+import { Footer } from './shared/components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ListOfEvents, Navbar],
+  imports: [RouterOutlet, Navbar, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

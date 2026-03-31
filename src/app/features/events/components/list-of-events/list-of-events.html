@@ -1,5 +1,5 @@
 <ul class="event-list">
-  <app-event-card></app-event-card>
+  @for (event of events(); track event.id) {
+    <app-event-card [event]="event"></app-event-card>
+  }
 </ul>
-
-Bienvenido a la página de eventos

@@ -1,0 +1,14 @@
+<a [routerLink]="['/events', event()?.id]" class="card-link">
+  <div class="event-card">
+    <img [src]="event()?.imageUrl" alt="" class="event-image" />
+    <div class="event-content">
+      <span class="genre-badge">{{ event()?.genre }}</span>
+      <h3 class="event-title">{{ event()?.title }}</h3>
+      <div class="event-meta">
+        <span class="event-date">{{ event()?.dateEvent }}</span>
+        <span class="event-price">{{ event()?.unitPrice }}</span>
+      </div>
+      <p class="event-place">{{ event()?.place }}</p>
+    </div>
+  </div>
+</a>
