@@ -1,3 +1,81 @@
-.example-card {
-    padding: 1rem;
+.card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.event-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.event-content {
+  padding: 16px;
+}
+
+.genre-badge {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-xs);
+  padding: 2px 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.event-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.event-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.event-date {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.event-price {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.event-place {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

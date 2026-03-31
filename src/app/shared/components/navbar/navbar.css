@@ -1,5 +1,58 @@
+.header {
+  background-color: var(--color-bg-surface);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.logo mat-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-name {
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+:host ::ng-deep .header .mat-mdc-button {
+  color: #ffffff;
+}
+
+:host ::ng-deep .header a[mat-stroked-button] {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+:host ::ng-deep .header a[mat-flat-button] {
+  background-color: #ffffff;
+  color: var(--color-primary);
+}
+
+.active-link {
+  color: var(--color-accent) !important;
+}
+
+a[mat-stroked-button],
+a[mat-flat-button] {
+  margin-left: 8px;
 }

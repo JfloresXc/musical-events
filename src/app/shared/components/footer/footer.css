@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--color-bg-surface);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
