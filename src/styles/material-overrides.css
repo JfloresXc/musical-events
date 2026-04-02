@@ -1,0 +1,86 @@
+/* --- BOTONES --- */
+:root {
+  --mat-button-filled-container-color: var(--color-primary);
+  --mat-button-filled-label-text-color: #ffffff;
+  --mat-button-filled-container-shape: var(--border-radius-sm);
+  --mat-button-filled-container-height: 40px;
+  --mat-button-filled-disabled-label-text-color: var(--color-text-muted);
+  --mat-button-filled-disabled-container-color: #e0e0e0;
+  --mdc-button-outlined-outline-color: var(--color-primary);
+}
+
+/* --- FORM FIELDS (outline) --- */
+:root {
+  --mat-form-field-outlined-input-text-color: var(--color-text-primary);
+  --mat-form-field-outlined-label-text-color: var(--color-text-secondary);
+  --mat-form-field-outlined-focus-label-text-color: var(--color-primary);
+  --mat-form-field-outlined-outline-color: #b0bec5;
+  --mat-form-field-outlined-focus-outline-color: var(--color-primary);
+  --mat-form-field-outlined-hover-outline-color: var(--color-text-secondary);
+  --mat-form-field-outlined-hover-label-text-color: var(--color-text-primary);
+  --mat-form-field-outlined-disabled-input-text-color: var(--color-text-muted);
+  --mat-form-field-outlined-disabled-label-text-color: var(--color-text-muted);
+  --mat-form-field-outlined-disabled-outline-color: #cfd8dc;
+  --mat-form-field-outlined-caret-color: var(--color-primary);
+  --mat-form-field-error-text-color: var(--color-error);
+  --mat-form-field-outlined-error-outline-color: var(--color-error);
+  --mat-form-field-outlined-error-focus-outline-color: var(--color-error);
+  --mat-form-field-outlined-error-label-text-color: var(--color-error);
+}
+
+/* --- SELECT --- */
+:root {
+  --mat-select-enabled-trigger-text-color: var(--color-text-primary);
+  --mat-select-panel-background-color: var(--color-bg-card);
+  --mat-option-label-text-color: var(--color-text-primary);
+  --mat-option-selected-state-label-text-color: var(--color-primary);
+  --mat-select-enabled-arrow-color: var(--color-primary);
+  --mat-option-selected-state-layer-color: #e3f2fd;
+}
+.mat-mdc-option:hover:not(.mdc-list-item--disabled) {
+  background-color: #e3f2fd !important;
+}
+
+/* --- TABLA --- */
+:root {
+  --mat-table-background-color: var(--color-bg-table-row);
+  --mat-table-header-headline-color: #ffffff;
+  --mat-table-row-item-label-text-color: var(--color-text-primary);
+  --mat-sort-arrow-color: #ffffff;
+}
+
+/* --- DIALOG --- */
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--color-bg-card) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+/* --- SNACKBAR --- */
+:root {
+  --mat-snack-bar-button-color: var(--color-primary);
+}
+
+/* --- DATEPICKER --- */
+:root {
+  --mat-datepicker-calendar-container-background-color: var(--color-bg-card);
+  --mat-datepicker-calendar-date-text-color: var(--color-text-primary);
+  --mat-datepicker-calendar-date-selected-state-background-color: var(--color-primary);
+  --mat-datepicker-calendar-date-today-outline-color: var(--color-accent);
+  --mat-datepicker-calendar-body-label-text-color: var(--color-text-secondary);
+  --mat-datepicker-calendar-period-button-text-color: var(--color-primary);
+  --mat-datepicker-calendar-navigation-button-icon-color: var(--color-primary);
+}
+
+/* --- CHECKBOX --- */
+body .mat-mdc-checkbox {
+  --mdc-checkbox-selected-icon-color: var(--color-primary);
+  --mdc-checkbox-selected-hover-icon-color: var(--color-primary);
+  --mdc-checkbox-unselected-icon-color: #90a4ae;
+  --mdc-checkbox-unselected-hover-icon-color: var(--color-text-secondary);
+}
+
+/* --- PROGRESS BAR (loading) --- */
+:root {
+  --mdc-linear-progress-active-indicator-color: var(--color-accent);
+  --mdc-linear-progress-track-color: #bbdefb;
+}

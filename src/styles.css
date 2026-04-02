@@ -1,3 +1,2 @@
-:root {
-  --color-bg-surface: #1e88e5;
-}
+@import './styles/colors.css';
+@import './styles/material-overrides.css';

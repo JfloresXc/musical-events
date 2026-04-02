@@ -1,12 +1,12 @@
 <a [routerLink]="['/events', event()?.id]" class="card-link">
   <div class="event-card">
-    <img [src]="event()?.imageUrl" alt="" class="event-image" />
+    <img [src]="event()?.imageUrl" alt="{{ event()?.title }}" class="event-image" />
     <div class="event-content">
       <span class="genre-badge">{{ event()?.genre }}</span>
       <h3 class="event-title">{{ event()?.title }}</h3>
       <div class="event-meta">
-        <span class="event-date">{{ event()?.dateEvent }}</span>
-        <span class="event-price">{{ event()?.unitPrice }}</span>
+        <span class="event-date">{{ event()?.dateEvent | date: 'dd/MM/yyyy' }}</span>
+        <span class="event-price">{{ event()?.unitPrice | currency: 'PEN' }}</span>
       </div>
       <p class="event-place">{{ event()?.place }}</p>
     </div>

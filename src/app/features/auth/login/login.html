@@ -1,1 +1,32 @@
-<p>login works!</p>
+<main class="auth-container">
+  <mat-card class="auth-card">
+    <mat-card-content>
+      <h1 class="auth-title">Iniciar Sesión</h1>
+
+      <div>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <input [(ngModel)]="emailModel" matInput type="email" autocomplete="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input
+            [(ngModel)]="passwordModel"
+            matInput
+            type="password"
+            autocomplete="current-password"
+          />
+        </mat-form-field>
+
+        <button (click)="login()" mat-flat-button color="primary" class="full-width">
+          Iniciar Sesión
+        </button>
+
+        <div class="auth-links">
+          <p class="auth-footer">¿No tienes cuenta? <a routerLink="/register">Regístrate</a></p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</main>

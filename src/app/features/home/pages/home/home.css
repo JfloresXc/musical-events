@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+  flex: 1;
+  width: 100%;
+}
+
+.hero-section {
+  background-color: var(--color-bg-surface);
+  color: white;
+  padding: 48px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero-section h1 {
+  font-size: 28px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 16px;
+}
+
+.filters-section {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-field,
+.genre-field {
+  flex: 1;
+  min-width: 250px;
+}
+
+.events-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.empty-state {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 18px;
+  padding-top: 48px;
+}
