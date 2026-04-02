@@ -11,8 +11,12 @@ export class EventService {
   apiUrl = environment.baseUrl;
   http = inject(HttpClient);
 
-  getEvents(): Observable<EventResponse> {
-    return this.http.get<EventResponse>(`${this.apiUrl}/concerts`);
+  getEvents(search?: string): Observable<EventResponse> {
+    return this.http.get<EventResponse>(`${this.apiUrl}/concerts`, {
+      params: {
+        title: search ?? '',
+      },
+    });
   }
 
   getEventById(id: string): Observable<Event> {

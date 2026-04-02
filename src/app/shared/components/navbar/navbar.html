@@ -6,6 +6,10 @@
 
   <span class="spacer"></span>
 
-  <a mat-stroked-button routerLink="/login">Ingresar</a>
-  <a mat-flat-button routerLink="/register">Registrarse</a>
+  @if (isLoggedIn()) {
+    <button mat-flat-button (click)="authService.logout()">Cerrar Sesión</button>
+  } @else {
+    <a mat-stroked-button routerLink="/login">Ingresar</a>
+    <a mat-flat-button routerLink="/register">Registrarse</a>
+  }
 </mat-toolbar>

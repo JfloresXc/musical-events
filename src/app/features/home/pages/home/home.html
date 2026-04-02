@@ -1,1 +1,18 @@
-<app-list-of-events [events]="events()" />
+<div class="hero-section">
+  <h1>Encuentra tu próximo evento favorito</h1>
+  <p>Explora una amplia selección de eventos y encuentra el que mejor se adapte a tus intereses</p>
+</div>
+
+<div class="filters-section">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Buscar evento</mat-label>
+    <input matInput type="text" placeholder="Buscar eventos" [(ngModel)]="searchModel" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <button mat-flat-button (click)="search()">Buscar</button>
+</div>
+
+<div class="events-grid">
+  <app-list-of-events [events]="events()" />
+</div>
