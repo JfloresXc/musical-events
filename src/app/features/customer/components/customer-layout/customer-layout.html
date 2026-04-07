@@ -1,0 +1,27 @@
+<div class="customer-container">
+  <header class="customer-header">
+    <h1>Panel de Administración</h1>
+  </header>
+
+  <nav class="customer-nav">
+    @if (this.isAdmin()) {
+      <a mat-button class="nav-tab" routerLink="./sales" routerLinkActive="active">Ventas</a>
+      <a mat-button class="nav-tab" routerLink="./events" routerLinkActive="active">Eventos</a>
+    } @else {
+      <a mat-button class="nav-tab" routerLink="./change-password" routerLinkActive="active"
+        >Cambiar Contraseña</a
+      >
+      <a mat-button class="nav-tab" routerLink="./my-purchases" routerLinkActive="active"
+        >Mis Compras</a
+      >
+    }
+  </nav>
+
+  <main class="admin-content">
+    <mat-card class="content-card">
+      <mat-card-content>
+        <router-outlet />
+      </mat-card-content>
+    </mat-card>
+  </main>
+</div>

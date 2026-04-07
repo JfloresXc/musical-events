@@ -17,6 +17,10 @@ export const routes: Routes = [
     component: EventDetail,
   },
   {
+    path: 'customer',
+    loadChildren: () => import('./features/customer/customer.routes').then((m) => m.routes),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

@@ -15,4 +15,5 @@ export class Navbar {
   title = signal<string>('MUSICAL EVENTS');
   authService = inject(AuthService);
   isLoggedIn = this.authService.isLoggedIn;
+  nameOfUser = this.authService.nameOfUser;
 }

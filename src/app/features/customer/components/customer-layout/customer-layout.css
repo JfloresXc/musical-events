@@ -1,0 +1,48 @@
+.customer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: calc(100vh - 112px);
+}
+
+.customer-header {
+  margin-bottom: 24px;
+}
+
+.customer-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--color-text-primary);
+}
+
+.customer-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.nav-tab {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius-sm);
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-tab.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.customer-content {
+  min-height: 400px;
+}
+
+.content-card {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
