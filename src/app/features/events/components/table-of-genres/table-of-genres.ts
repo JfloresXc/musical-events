@@ -1,10 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { Genre } from '../../interfaces/Genre';
 import { MatButtonModule } from '@angular/material/button';
 import { GenreService } from '../../services/genre.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GenreModal } from '../genre-modal/genre-modal';
 
@@ -14,25 +13,35 @@ import { GenreModal } from '../genre-modal/genre-modal';
   templateUrl: './table-of-genres.html',
   styleUrl: './table-of-genres.css',
 })
-export class TableOfGenres {
+export class TableOfGenres implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'status', 'actions'];
   genreService = inject(GenreService);
-  genres = toSignal<Genre[]>(this.genreService.getGenres() ?? []);
+  genres = signal<Genre[]>([]);
 
   private dialog = inject(MatDialog);
 
-  openGenreModal(idGenre?: number) {
+  ngOnInit() {
+    this.loadGenres();
+  }
+
+  async loadGenres() {
+    this.genreService.getGenres().subscribe((response) => {
+      this.genres.set(response);
+    });
+  }
+
+  openGenreModal(genre?: Genre) {
     const dialogRef = this.dialog.open(GenreModal, {
       width: '400px',
       data: {
-        idGenre: idGenre,
+        idGenre: genre?.id,
+        name: genre?.name,
+        status: genre?.status,
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        console.log('Data received from modal:', result);
-      }
+    dialogRef.afterClosed().subscribe(async () => {
+      this.loadGenres();
     });
   }
 }

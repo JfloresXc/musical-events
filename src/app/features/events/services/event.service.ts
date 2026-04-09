@@ -22,4 +22,16 @@ export class EventService {
   getEventById(id: string): Observable<Event> {
     return this.http.get<Event>(`${this.apiUrl}/concerts/${id}`);
   }
+
+  deleteEvent(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/concerts/${id}`);
+  }
+
+  createEvent(event: Event): Observable<Event> {
+    return this.http.post<Event>(`${this.apiUrl}/concerts`, event);
+  }
+
+  updateEvent(event: Event): Observable<Event> {
+    return this.http.put<Event>(`${this.apiUrl}/concerts/${event.id}`, event);
+  }
 }

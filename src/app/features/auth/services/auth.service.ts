@@ -62,17 +62,9 @@ export class AuthService {
   }
 
   changePassword({ oldPassword, newPassword }: { oldPassword: string; newPassword: string }) {
-    return this.http.post(
-      `${this.baseUrl}Users/change-password`,
-      {
-        oldPassword,
-        newPassword,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${this.token()}`,
-        },
-      },
-    );
+    return this.http.post(`${this.baseUrl}Users/change-password`, {
+      oldPassword,
+      newPassword,
+    });
   }
 }

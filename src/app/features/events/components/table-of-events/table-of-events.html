@@ -8,7 +8,7 @@
   </div>
 
   <div class="table-container">
-    <table mat-table matSort class="mat-elevation-1">
+    <table mat-table [dataSource]="events()" matSort class="mat-elevation-1">
       <ng-container matColumnDef="imageUrl">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Imagen</th>
         <td mat-cell *matCellDef="let event">
@@ -52,10 +52,20 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td mat-cell *matCellDef="let event">
-          <button mat-icon-button color="primary" matTooltip="Editar evento">
+          <button
+            mat-icon-button
+            color="primary"
+            routerLink="/customer/events/form/{{ event.id }}"
+            matTooltip="Editar evento"
+          >
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" matTooltip="Eliminar evento">
+          <button
+            (click)="deleteEvent(event.id)"
+            mat-icon-button
+            color="warn"
+            matTooltip="Eliminar evento"
+          >
             <mat-icon>delete</mat-icon>
           </button>
         </td>

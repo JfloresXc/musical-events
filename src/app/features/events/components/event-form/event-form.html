@@ -1,7 +1,7 @@
 <div class="event-form-container">
   <h2 class="event-form-title">{{ true ? 'Editar Evento' : 'Nuevo Evento' }}</h2>
 
-  <form class="event-form">
+  <form [formGroup]="form" class="event-form">
     <div class="form-row">
       <mat-form-field appearance="outline" class="form-field">
         <mat-label>Título</mat-label>
@@ -33,14 +33,14 @@
 
       <mat-form-field appearance="outline" class="form-field">
         <mat-label>Género</mat-label>
-        <!-- <mat-select formControlName="genreId">
+        <mat-select formControlName="genreId">
           @for (genre of genres(); track genre.id) {
             <mat-option [value]="genre.id">{{ genre.name }}</mat-option>
           }
         </mat-select>
         @if (form.controls.genreId.hasError('required')) {
           <mat-error>El género es requerido</mat-error>
-        } -->
+        }
       </mat-form-field>
     </div>
 
@@ -50,46 +50,46 @@
         <input matInput [matDatepicker]="eventDatePicker" formControlName="dateEvent" />
         <mat-datepicker-toggle matIconSuffix [for]="eventDatePicker" />
         <mat-datepicker #eventDatePicker />
-        <!-- @if (form.controls.dateEvent.hasError('required')) {
+        @if (form.controls.dateEvent.hasError('required')) {
           <mat-error>La fecha del evento es requerida</mat-error>
-        } -->
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="form-field">
         <mat-label>Hora del Evento</mat-label>
-        <input matInput type="time" formControlName="timeEvent" />
-        <!-- @if (form.controls.timeEvent.hasError('required')) {
+        <input matInput type="time" formControlName="dateEvent" />
+        @if (form.controls.dateEvent.hasError('required')) {
           <mat-error>La hora del evento es requerida</mat-error>
-        } -->
+        }
       </mat-form-field>
     </div>
 
     <div class="form-row">
       <mat-form-field appearance="outline" class="form-field">
         <mat-label>Cantidad de Tickets</mat-label>
-        <input matInput type="number" formControlName="ticketsQuantity" />
-        <!-- @if (form.controls.ticketsQuantity.hasError('required')) {
+        <input matInput type="number" formControlName="capacity" />
+        @if (form.controls.capacity.hasError('required')) {
           <mat-error>La cantidad de tickets es requerida</mat-error>
-        } @else if (form.controls.ticketsQuantity.hasError('min')) {
+        } @else if (form.controls.capacity.hasError('min')) {
           <mat-error>Debe haber al menos 1 ticket</mat-error>
-        } -->
+        }
       </mat-form-field>
     </div>
 
     <mat-form-field appearance="outline" class="form-field full-width">
       <mat-label>Descripción</mat-label>
       <textarea matInput formControlName="description" rows="3"></textarea>
-      <!-- @if (form.controls.description.hasError('required')) {
+      @if (form.controls.description.hasError('required')) {
         <mat-error>La descripción es requerida</mat-error>
-      } -->
+      }
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="form-field full-width">
       <mat-label>Descripción Extendida</mat-label>
       <textarea matInput formControlName="extendedDescription" rows="5"></textarea>
-      <!-- @if (form.controls.extendedDescription.hasError('required')) {
+      @if (form.controls.extendedDescription.hasError('required')) {
         <mat-error>La descripción extendida es requerida</mat-error>
-      } -->
+      }
     </mat-form-field>
 
     <!-- <div class="form-field full-width">
@@ -119,6 +119,7 @@
         type="submit"
         [disabled]="form.invalid"
         class="submit-btn"
+        (click)="saveEvent()"
       >
         Guardar
       </button>
