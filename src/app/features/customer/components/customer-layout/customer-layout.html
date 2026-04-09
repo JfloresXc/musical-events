@@ -6,6 +6,7 @@
   <nav class="customer-nav">
     @if (this.isAdmin()) {
       <a mat-button class="nav-tab" routerLink="./sales" routerLinkActive="active">Ventas</a>
+      <a mat-button class="nav-tab" routerLink="./genres" routerLinkActive="active">Géneros</a>
       <a mat-button class="nav-tab" routerLink="./events" routerLinkActive="active">Eventos</a>
     } @else {
       <a mat-button class="nav-tab" routerLink="./change-password" routerLinkActive="active"

@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>{{ data.idGenre ? 'Editar Género' : 'Nuevo Género' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="genreForm">
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" placeholder="Nombre del género" />
+    </mat-form-field>
+
+    <mat-checkbox formControlName="status" class="status-checkbox">Activo</mat-checkbox>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+</mat-dialog-actions>

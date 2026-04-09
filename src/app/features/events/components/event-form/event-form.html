@@ -1,0 +1,127 @@
+<div class="event-form-container">
+  <h2 class="event-form-title">{{ true ? 'Editar Evento' : 'Nuevo Evento' }}</h2>
+
+  <form class="event-form">
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title" />
+        <!-- @if (form.controls.title.hasError('required')) {
+          <mat-error>El título es requerido</mat-error>
+        } -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Lugar</mat-label>
+        <input matInput formControlName="place" />
+        <!-- @if (form.controls.place.hasError('required')) {
+          <mat-error>El lugar es requerido</mat-error>
+        } -->
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Precio Unitario</mat-label>
+        <input matInput type="number" formControlName="unitPrice" />
+        <!-- @if (form.controls.unitPrice.hasError('required')) {
+          <mat-error>El precio unitario es requerido</mat-error>
+        } @else if (form.controls.unitPrice.hasError('min')) {
+          <mat-error>El precio debe ser mayor a 0</mat-error>
+        } -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Género</mat-label>
+        <!-- <mat-select formControlName="genreId">
+          @for (genre of genres(); track genre.id) {
+            <mat-option [value]="genre.id">{{ genre.name }}</mat-option>
+          }
+        </mat-select>
+        @if (form.controls.genreId.hasError('required')) {
+          <mat-error>El género es requerido</mat-error>
+        } -->
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Fecha del Evento</mat-label>
+        <input matInput [matDatepicker]="eventDatePicker" formControlName="dateEvent" />
+        <mat-datepicker-toggle matIconSuffix [for]="eventDatePicker" />
+        <mat-datepicker #eventDatePicker />
+        <!-- @if (form.controls.dateEvent.hasError('required')) {
+          <mat-error>La fecha del evento es requerida</mat-error>
+        } -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Hora del Evento</mat-label>
+        <input matInput type="time" formControlName="timeEvent" />
+        <!-- @if (form.controls.timeEvent.hasError('required')) {
+          <mat-error>La hora del evento es requerida</mat-error>
+        } -->
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Cantidad de Tickets</mat-label>
+        <input matInput type="number" formControlName="ticketsQuantity" />
+        <!-- @if (form.controls.ticketsQuantity.hasError('required')) {
+          <mat-error>La cantidad de tickets es requerida</mat-error>
+        } @else if (form.controls.ticketsQuantity.hasError('min')) {
+          <mat-error>Debe haber al menos 1 ticket</mat-error>
+        } -->
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="form-field full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="description" rows="3"></textarea>
+      <!-- @if (form.controls.description.hasError('required')) {
+        <mat-error>La descripción es requerida</mat-error>
+      } -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field full-width">
+      <mat-label>Descripción Extendida</mat-label>
+      <textarea matInput formControlName="extendedDescription" rows="5"></textarea>
+      <!-- @if (form.controls.extendedDescription.hasError('required')) {
+        <mat-error>La descripción extendida es requerida</mat-error>
+      } -->
+    </mat-form-field>
+
+    <!-- <div class="form-field full-width">
+      <label class="image-upload-label">
+        Imagen del Evento
+        <input
+          type="file"
+          (change)="onImageSelected($event)"
+          accept="image/*"
+          class="hidden-input"
+        />
+      </label>
+      @if (imagePreview()) {
+        <div class="image-preview-container">
+          <img [src]="imagePreview()" alt="Vista previa de la imagen" class="image-preview" />
+        </div>
+      }
+    </div> -->
+
+    <div class="form-actions">
+      <button mat-raised-button type="button" (click)="cancel()" class="cancel-btn">
+        Cancelar
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+        class="submit-btn"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

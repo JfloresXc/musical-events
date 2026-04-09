@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { CustomerLayout } from './components/customer-layout/customer-layout';
 import { ChangePassword } from './components/change-password/change-password';
 import { MyPurchases } from './components/my-purchases/my-purchases';
+import { TableOfGenres } from '../events/components/table-of-genres/table-of-genres';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
       {
         path: 'my-purchases',
         component: MyPurchases,
+      },
+      {
+        path: 'genres',
+        component: TableOfGenres,
       },
     ],
   },
