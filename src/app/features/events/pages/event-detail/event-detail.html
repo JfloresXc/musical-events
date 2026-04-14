@@ -11,8 +11,10 @@
 
     <div class="event-meta">
       <div class="event-meta-item">
-        <span class="event-meta-label">Fecha:</span>
-        <span class="event-meta-value">{{ event()?.dateEvent }}</span>
+        <span class="event-meta-label">La fecha es </span>
+        <span class="event-meta-value">{{
+          event()?.dateEvent | date: 'EEEE, d "de" MMMM "del" yyyy'
+          }}</span>
       </div>
       <div class="event-meta-item">
         <span class="event-meta-label">Precio:</span>

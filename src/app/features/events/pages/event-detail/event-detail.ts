@@ -7,10 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { BuyTicket } from '../../components/buy-ticket/buy-ticket';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-event-detail',
-  imports: [MatIcon, MatButtonModule],
+  imports: [MatIcon, MatButtonModule, DatePipe],
   templateUrl: './event-detail.html',
   styleUrl: './event-detail.css',
 })
