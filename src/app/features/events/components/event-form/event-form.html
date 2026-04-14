@@ -57,10 +57,10 @@
 
       <mat-form-field appearance="outline" class="form-field">
         <mat-label>Hora del Evento</mat-label>
-        <input matInput type="time" formControlName="dateEvent" />
-        @if (form.controls.dateEvent.hasError('required')) {
+        <input matInput type="time" formControlName="timeEvent" />
+        <!-- @if (form.controls.timeEvent.hasError('required')) {
           <mat-error>La hora del evento es requerida</mat-error>
-        }
+        } -->
       </mat-form-field>
     </div>
 
@@ -92,12 +92,13 @@
       }
     </mat-form-field>
 
-    <!-- <div class="form-field full-width">
+    <div class="form-field full-width">
       <label class="image-upload-label">
         Imagen del Evento
         <input
           type="file"
           (change)="onImageSelected($event)"
+          multiple
           accept="image/*"
           class="hidden-input"
         />
@@ -107,7 +108,7 @@
           <img [src]="imagePreview()" alt="Vista previa de la imagen" class="image-preview" />
         </div>
       }
-    </div> -->
+    </div>
 
     <div class="form-actions">
       <button mat-raised-button type="button" (click)="cancel()" class="cancel-btn">

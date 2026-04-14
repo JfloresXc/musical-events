@@ -18,6 +18,7 @@ export interface Event {
   capacity?: number;
   finalized?: boolean;
   status?: string;
+  image?: File | null;
 }
 
 export interface Meta {

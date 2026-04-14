@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Comprar Entradas</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="saleForm">
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Cantidad de entradas</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="ticketsQuantity"
+        placeholder="Cantidad de entradas"
+      />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+</mat-dialog-actions>

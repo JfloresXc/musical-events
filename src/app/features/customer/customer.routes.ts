@@ -5,6 +5,7 @@ import { MyPurchases } from './components/my-purchases/my-purchases';
 import { TableOfGenres } from '../events/components/table-of-genres/table-of-genres';
 import { TableOfEvents } from '../events/components/table-of-events/table-of-events';
 import { EventForm } from '../events/components/event-form/event-form';
+import { TableOfSales } from '../events/components/table-of-sales/table-of-sales';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
       {
         path: 'events/form/:id',
         component: EventForm,
+      },
+      {
+        path: 'sales',
+        component: TableOfSales,
       },
     ],
   },

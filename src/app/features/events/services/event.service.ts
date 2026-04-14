@@ -27,11 +27,11 @@ export class EventService {
     return this.http.delete<void>(`${this.apiUrl}/concerts/${id}`);
   }
 
-  createEvent(event: Event): Observable<Event> {
-    return this.http.post<Event>(`${this.apiUrl}/concerts`, event);
+  createEvent(formData: FormData): Observable<number> {
+    return this.http.post<number>(`${this.apiUrl}/concerts`, formData);
   }
 
-  updateEvent(event: Event): Observable<Event> {
-    return this.http.put<Event>(`${this.apiUrl}/concerts/${event.id}`, event);
+  updateEvent(id: number, formData: FormData): Observable<number> {
+    return this.http.put<number>(`${this.apiUrl}/concerts/${id}`, formData);
   }
 }
